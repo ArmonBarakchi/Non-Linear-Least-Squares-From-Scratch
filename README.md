@@ -2,7 +2,7 @@
 
 # Training Neural Networks Using Non-Linear Least Squares
 
-This repository contains an implementation of **non-linear least squares algorithms** to train a simple neural network from scratch. The project demonstrates the ability of neural networks as universal approximators by approximating various non-linear functions. The Levenberg-Marquardt algorithm is used to optimize the neural network parameters, with a focus on understanding and implementing non-linear least squares methodologies.
+This repository contains an implementation of **non-linear least squares algorithms** to train a simple neural network from scratch. The project demonstrates the ability of neural networks as universal approximators by approximating various non-linear functions. The **Levenberg-Marquardt algorithm** is used to optimize the neural network parameters, focusing on understanding and implementing non-linear least squares methodologies.
 
 ## Features
 - **Neural Network Architecture**: 
@@ -15,7 +15,7 @@ This repository contains an implementation of **non-linear least squares algorit
   - Implements the **Levenberg-Marquardt algorithm** for efficient optimization of weights.
 
 - **Regularization**:
-  - Adds an optional regularization term \( \lambda ||w||^2_2 \) to the loss function to prevent overfitting.
+  - Adds an optional regularization term \( \lambda \|w\|^2_2 \) to the loss function to prevent overfitting.
   - Explores the effect of varying regularization strengths on training performance.
 
 - **Noise Robustness**:
@@ -31,9 +31,9 @@ This repository contains an implementation of **non-linear least squares algorit
    - Generates 500 random input points \( x \in \mathbb{R}^3 \) and computes target values for the chosen non-linear function \( g(x) \).
    - Minimizes the training loss:
      \[
-     l(w) = \sum_{n=1}^{N} \left(f_w(x^{(n)}) - g(x^{(n)})\right)^2 + \lambda ||w||^2_2
+     l(w) = \sum_{n=1}^{N} \left(f_w(x^{(n)}) - g(x^{(n)})\right)^2 + \lambda \|w\|^2_2
      \]
-   - Uses the Levenberg-Marquardt algorithm to iteratively update weights.
+   - Uses the **Levenberg-Marquardt algorithm** to iteratively update weights.
    - Experiments with various initializations, stopping criteria, and regularization strengths (\( \lambda \)).
 
 3. **Testing**:
@@ -41,7 +41,10 @@ This repository contains an implementation of **non-linear least squares algorit
    - Computes error metrics to summarize training and testing accuracy under different conditions.
 
 4. **Noisy Data Experiments**:
-   - Trains the network on noisy data where the target outputs are perturbed by bounded noise.
+   - Trains the network on noisy data where the target outputs are perturbed by bounded noise:
+     \[
+     y^{(n)} = g(x^{(n)}) + e^{(n)}, \quad \|e^{(n)}\| \leq \epsilon
+     \]
    - Studies the effect of noise levels (\( \epsilon \)) on model robustness and accuracy.
 
 5. **Custom Non-Linear Functions**:
@@ -73,10 +76,8 @@ This repository contains an implementation of **non-linear least squares algorit
 ## Contributions
 This project serves as a foundation for:
 - Understanding neural network training via non-linear least squares.
-- Learning advanced optimization techniques like the Levenberg-Marquardt algorithm.
+- Learning advanced optimization techniques like the **Levenberg-Marquardt algorithm**.
 - Exploring the effects of regularization and noise in machine learning.
-
-Feel free to contribute by experimenting with additional non-linear functions, enhancing visualization techniques, or integrating alternative optimization algorithms.
 
 ---
 
